@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect With Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border: 3px solid #e74c3c;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 70px;
+            height: auto;
+            max-height: 70px;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 18px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .youtube {
+            background: linear-gradient(45deg, #ff0000, #ff4444);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #e4405f, #9b59b6, #f7931e);
+            color: white;
+            box-shadow: 0 4px 15px rgba(228, 64, 95, 0.3);
+        }
+
+        .facebook {
+            background: linear-gradient(45deg, #3b5998, #4267B2);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 89, 152, 0.3);
+        }
+
+        .website {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            color: white;
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link:active {
+            transform: translateY(-1px);
+        }
+
+        .youtube:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+        }
+
+        .instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4);
+        }
+
+        .facebook:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 89, 152, 0.4);
+        }
+
+        .website:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.4);
+        }
+
+        .icon {
+            margin-right: 15px;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Text/Emoji icons for all buttons */
+        .text-icon {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Instagram icon styling */
+        .instagram-icon {
+            font-size: 22px;
+            color: white;
+        }
+
+        /* Website icon styling */
+        .website-icon {
+            font-size: 22px;
+            color: white;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .social-link {
+                padding: 15px 20px;
+                font-size: 14px;
+            }
+
+            .icon {
+                width: 28px;
+                height: 28px;
+                margin-right: 12px;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo pulse">
+            <img src="zitro-logo.png" alt="ZITRO Logo">
+        </div>
+        <h1>Connect With Us</h1>
+        <p class="subtitle">Click to visit our social media pages</p>
+        
+        <div class="social-links">
+            <a href="https://www.youtube.com/channel/UCNa-A6_bMAkL3-TowfmD2aA" class="social-link youtube" target="_blank">
+                <span class="icon">
+                    <span class="text-icon">▶</span>
+                </span>
+                YouTube Channel
+            </a>
+            
+            <a href="https://www.instagram.com/zitroservicesllc/" class="social-link instagram" target="_blank">
+                <span class="icon">
+                    <span class="text-icon instagram-icon">📸</span>
+                </span>
+                Instagram
+            </a>
+            
+            <a href="https://www.facebook.com/zitroservicesllc/" class="social-link facebook" target="_blank">
+                <span class="icon">
+                    <span class="text-icon">f</span>
+                </span>
+                Facebook Page
+            </a>
+            
+            <a href="https://zitroservicesllc.com/" class="social-link website" target="_blank">
+                <span class="icon">
+                    <span class="text-icon website-icon">🌐</span>
+                </span>
+                Visit Our Website
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Add click analytics or tracking here if needed
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // You can add tracking code here
+                console.log(`Clicked: ${this.textContent.trim()}`);
+            });
+        });
+    </script>
+</body>
+</html>
